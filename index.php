@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<?php
+if(!empty($_GET['s'])){
+  echo "登入成功，請輸入帳號密碼";
+}
+?>
   <h1>會員登入</h1>
 <form action="login_api.php" method="post"> 
 <table class="wrapper">
