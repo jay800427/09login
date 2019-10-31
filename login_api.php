@@ -29,12 +29,15 @@ print_r($data);
 
 if(!empty($data)){
   echo "登入成功";
-  header("location:member_center.php?id=".$data['id']);
+  $_SESSION['login']=1;//判斷登入有無成功
+  $_SESSION['id']=$data['id'];//判斷登入後有沒有抓到id的資料
+  header("location:member_center.php");
 }else{
   echo "登入失敗";
   header("location:index.php?err=1");
 }
   
+// 原先的範本
   /* if(!empty($data)){
     echo "登入成功";
   }else{

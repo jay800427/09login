@@ -1,3 +1,9 @@
+<?php
+ session_start();
+if(!empty($_SESSION['login'])){ //如果登入進去有值的話
+  header("location:member_center.php");//會被導入回會員中心
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
