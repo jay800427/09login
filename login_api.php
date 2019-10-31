@@ -1,3 +1,4 @@
+<?php include "base.php";?>
 <?php
 /***************************************************
  * 會員登入行為：
@@ -14,11 +15,11 @@
   echo "<br>";
   echo "pw=".$pw;
   
-$dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
-$pdo=new PDO($dsn,'root','');
+// $dsn="mysql:host=localhost;charset=utf8;dbname=mydb";
+// $pdo=new PDO($dsn,'root','');
 
 //$sql="select count(*) as 'r' from user where acc='$acc' &&  pw='$pw'";
-$sql="select id from user where acc='$acc' &&  pw='$pw'";
+$sql="select id from user where acc='$acc' &&  pw='$pw'";//從user這張表單，選取該帳戶的所有資訊(假設我的資料庫有三筆，他就會從這三筆去搜尋)
 
 //$data=$pdo->query($sql)->fetchColumn();
 $data=$pdo->query($sql)->fetch();
