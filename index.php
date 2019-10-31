@@ -1,6 +1,6 @@
 <?php
- session_start();
-if(!empty($_SESSION['login'])){ //如果登入進去有值的話
+ session_start();//有用到SESSION語法的頁面開頭都要加這項
+if(!empty($_COOKIE['login'])){ //如果登入進去有值的話
   header("location:member_center.php");//會被導入回會員中心
 }
 ?>

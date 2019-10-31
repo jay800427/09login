@@ -1,5 +1,5 @@
 <?php include "base.php";
-if(empty($_SESSION['login'])){//如果沒有值的話
+if(empty($_COOKIE['login'])){//如果沒有值的話
   exit();//退出當前頁面
 }
 ?>
@@ -35,7 +35,7 @@ if(empty($_SESSION['login'])){//如果沒有值的話
       // $dsn="mysql:host=localhost;charset=utf8;dbname=mydb"; //連結資料庫
       // $pdo=new PDO($dsn,'root','');
 
-      $sql="select * from user where id='".$_SESSION['id']."'";
+      $sql="select * from user where id='".$_COOKIE['id']."'";
       //echo $sql;
       $user=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
       //print_r($user);
