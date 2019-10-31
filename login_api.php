@@ -27,8 +27,10 @@
   
   if($data['r']==1){
     echo "登入成功";
+    header("location:member_center.php");
   }else{
     echo "登入失敗";
+    header("location:index.php?err=1");
   }
   
   /* if(!empty($data)){
