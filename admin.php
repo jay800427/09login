@@ -43,7 +43,7 @@ $rows=$pdo->query($sql)->fetchAll();//fecthAll()是抓取全部資料，fecth()�
         <td><?=$user['addr'];?></td>
         <td><?=$user['tel'];?></td>
         <td><?=$user['email'];?></td>
-        <td><a href="del_user.php">刪除</td>
+        <td><a href="del_user.php?id=<?=$user['id'];?>">刪除</td><!--因為我們要刪除資料庫裡的資料(所以從列表那邊著手)透過get的方式-->
     </tr>
     <?php
     }
