@@ -30,6 +30,7 @@ if(empty($_SESSION['login'])){//如果登入沒有值的話
     <div class="wellcome">
       HI! 歡迎光臨!以下是你的個人資料:
       <a href="logout.php">登出</a><!--新增一個登出的連結(該連結頁面會清除login的值)-->
+      <a href="admin.php">會員列表</a><!--跳出一個資料庫的所有會員列表-->
     </div>
       
     <div class="private">
