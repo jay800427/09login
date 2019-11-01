@@ -1,7 +1,7 @@
 <?php include "base.php";
 if(empty($_SESSION['login'])){//如果登入沒有值的話
   header("location:index.php");//導回首頁
-  exit();//退出當前頁面
+  exit();//程式執行到這裡就結束
 }
 ?>
 <!DOCTYPE html>
@@ -44,6 +44,7 @@ if(empty($_SESSION['login'])){//如果登入沒有值的話
       //print_r($user);
 
       ?>
+      <form action="edit_user.php" method="post">
       <table>
         <tr>
           <td>id</td>
@@ -59,27 +60,32 @@ if(empty($_SESSION['login'])){//如果登入沒有值的話
         </tr>
         <tr>
           <td>name</td>
-          <td><?=$user['name'];?></td>
+          <td><input type="text" name="name" id="name" value="<?=$user['name'];?>"></td>
         </tr>
         <tr>
           <td>addr</td>
-          <td><?=$user['addr'];?></td>
+          <td><input type="text" name="addr" id="addr" value="<?=$user['addr'];?>"></td>
         </tr>
         <tr>
           <td>tel</td>
-          <td><?=$user['tel'];?></td>
+          <td><input type="text" name="tel" id="tel" value="<?=$user['tel'];?>"></td>
         </tr>
         <tr>
           <td>birthday</td>
-          <td><?=$user['birthday'];?></td>
+          <td><input type="text" name="birthday" id="birthday" value="<?=$user['birthday'];?>"></td>
         </tr>
         <tr>
           <td>email</td>
-          <td><?=$user['email'];?></td>
+          <td><input type="text" name="email" id="email" value="<?=$user['email'];?>"></td>
+        </tr>
+        <tr>
+        <td colspan="2"><!--合併儲存格(橫向)，rowspan(縱向))-->
+            <input type="hidden" name="id" value="<?=$user['id'];?>"><!--透過表單的方式傳一個id值給edit_user的這張網頁-->
+            <input type="submit" value="編輯">
+        </td>
         </tr>
       </table>
-
-
+      </form>
 
     </div>
   </div>
