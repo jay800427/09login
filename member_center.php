@@ -1,6 +1,6 @@
 <?php include "base.php";
-if(empty($_SESSION['login'])){//如果沒有值的話
-  header("location:index.php");
+if(empty($_SESSION['login'])){//如果登入沒有值的話
+  header("location:index.php");//導回首頁
   exit();//退出當前頁面
 }
 ?>
@@ -29,7 +29,7 @@ if(empty($_SESSION['login'])){//如果沒有值的話
   <div class="member">
     <div class="wellcome">
       HI! 歡迎光臨!以下是你的個人資料:
-      <a href="logout.php">登出</a>
+      <a href="logout.php">登出</a><!--新增一個登出的連結(該連結頁面會清除login的值)-->
     </div>
       
     <div class="private">
