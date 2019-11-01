@@ -31,8 +31,8 @@ if(!empty($data)){
   echo "登入成功";
   //$_SESSION['login']=1;//判斷登入有無成功
   //$_SESSION['id']=$data['id'];//判斷登入後有沒有抓到id的資料
-  setcookie("login",1,time()+120);//用cookie的登入方式判斷登入有無成功(我在這邊設定兩分鐘後cookie會失效)
-  setcookie("id",$data['id'],time()+120);//用cookie來判斷登入後有沒有抓到id的資料(我在這邊設定兩分鐘後cookie會失效)
+  setcookie("login",1,time()+3600);//用cookie的登入方式判斷登入有無成功(我在這邊設定兩分鐘後cookie會失效)
+  setcookie("id",$data['id'],time()+3600);//用cookie來判斷登入後有沒有抓到id的資料(我在這邊設定兩分鐘後cookie會失效)
   header("location:member_center.php");
 }else{
   echo "登入失敗";

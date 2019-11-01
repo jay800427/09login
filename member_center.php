@@ -1,6 +1,7 @@
 <?php include "base.php";
 if(empty($_COOKIE['login'])){//如果沒有值的話
-  exit();//退出當前頁面
+  header("location:index.php");
+  exit();//程式執行到這裡為止
 }
 ?>
 <!DOCTYPE html>
@@ -28,6 +29,7 @@ if(empty($_COOKIE['login'])){//如果沒有值的話
   <div class="member">
     <div class="wellcome">
       HI! 歡迎光臨!以下是你的個人資料:
+      <a href="logout.php">登出</a>
     </div>
     <div class="private">
       <!--請自行設計個人資料的呈現方式並從資料庫取得會員資料-->
